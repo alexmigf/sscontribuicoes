@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora de Contribuições para a Segurança Social</title>
+	<meta name="description" content="Calculadora de Contribuições para a Segurança Social para trabalhador independente. Calcule facilmente suas contribuições mensais.">
+	<meta name="keywords" content="calculadora, contribuições, segurança social, mensal, serviços, bens, trabalhador independente">
+	<meta name="author" content="Alexandre Faustino">
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+	<div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+		<h2 class="text-2xl font-semibold text-center text-blue-600 mb-6">Calculadora de Contribuições para a Segurança Social</h2>
+		
+		<!-- Campo para inserir o total de serviços -->
+		<div class="mb-4">
+			<label for="totalServicos" class="block text-gray-700 font-medium mb-2">Total de Vendas de Serviços (€):</label>
+			<input type="text" id="totalServicos" placeholder="Insira o valor para serviços" 
+				   class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+		</div>
+
+		<!-- Campo para inserir o total de bens -->
+		<div class="mb-4">
+			<label for="totalBens" class="block text-gray-700 font-medium mb-2">Total de Vendas de Bens (€):</label>
+			<input type="text" id="totalBens" placeholder="Insira o valor para bens" 
+				   class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+		</div>
+
+		<!-- Campo para inserir o total de atividades hoteleiras, restauração e similares -->
+		<div class="mb-4">
+			<label for="totalHoteleiras" class="block text-gray-700 font-medium mb-2">Total de Atividades Hoteleiras, Restauração e Similares (€):</label>
+			<input type="text" id="totalHoteleiras" placeholder="Insira o valor para atividades hoteleiras" 
+				   class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+		</div>
+
+		<!-- Campo para inserir o total de subsídios à exploração -->
+		<div class="mb-4">
+			<label for="totalSubsidios" class="block text-gray-700 font-medium mb-2">Total de Subsídios à Exploração (€):</label>
+			<input type="text" id="totalSubsidios" placeholder="Insira o valor para subsídios à exploração" 
+				   class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+		</div>
+
+		<!-- Seletor para a taxa de contribuição -->
+		<div class="mb-4">
+			<label for="taxaContributiva" class="block text-gray-700 font-medium mb-2">Taxa de Contribuição:</label>
+			<select id="taxaContributiva" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+				<option value="0.214">21,4%</option>
+				<option value="0.252">25,2%</option>
+			</select>
+		</div>
+
+		<!-- Seletor para a variação de rendimento -->
+		<div class="mb-6">
+			<label for="variacao" class="block text-gray-700 font-medium mb-2">Variação de Rendimento:</label>
+			<select id="variacao" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+				<option value="0.75">-25%</option>
+				<option value="0.80">-20%</option>
+				<option value="0.85">-15%</option>
+				<option value="0.90">-10%</option>
+				<option value="0.95">-5%</option>
+				<option value="1.05">5%</option>
+				<option value="1.10">10%</option>
+				<option value="1.15">15%</option>
+				<option value="1.20">20%</option>
+				<option value="1.25">25%</option>
+			</select>
+		</div>
+
+		<!-- Botão para calcular -->
+		<button onclick="calcularContribuicao()" 
+				class="w-full bg-blue-600 text-white p-2 rounded-md font-semibold hover:bg-blue-700 transition">Calcular Contribuição Mensal</button>
+
+		<!-- Resultado -->
+		<h3 id="resultado" class="mt-6 text-center text-xl font-semibold text-blue-600"></h3>
+		
+		<!-- Rodapé -->
+		<footer class="text-center text-gray-500 text-sm mt-2">
+			Criado por <a href="https://alexmigf.dev" class="text-blue-500 hover:underline" target="_blank">Alexandre Faustino</a>
+		</footer>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>
